@@ -1,0 +1,38 @@
+<?php
+require_once 'config/database.php';
+
+class Model
+{
+    protected $db;
+    protected $table;
+
+    public function __construct()
+    {
+        $database = new Database();
+        $this->db = $database->getConnection();
+    }
+
+    protected function query($sql, $params = [], $types = "")
+    {
+        $stmt = $this->db->prepare($sql);
+        if (!$stmt) die("Prepare failed: " . $this->db->error);
+        if (!empty($params)) {
+            if (empty($types)) $types = str_repeat('s', count($params));
+            $stmt->bind_param($types, ...$params);
+        }
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function find($id)
+    {
+        $stmt = $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id]);
+        return $stmt->get_result()->fetch_assoc();
+    }
+
+    public function getAll()
+    {
+        $stmt = $this->query("SELECT * FROM {$this->table} ORDER BY id DESC");
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+}
