@@ -1,10 +1,7 @@
 /* ============================================
-<<<<<<< HEAD
    Online Quiz Platform - Global Styles
    Modern design with gradient, cards, glassmorphism
-=======
    Online Quiz Platform - Vibrant Color Scheme
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
    ============================================ */
 
 * {
@@ -15,15 +12,12 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-<<<<<<< HEAD
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #1e293b;
-=======
     background: linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 162) 100%);
     min-height: 100vh;
     color: rgb(30, 41, 59);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 /* Main app container – sticky footer layout */
@@ -33,11 +27,8 @@ body {
     min-height: 100vh;
     max-width: 1400px;
     margin: 0 auto;
-<<<<<<< HEAD
     background: #f8fafc;
-=======
     background: rgb(248, 250, 252);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     border-radius: 0 0 24px 24px;
     box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
 }
@@ -46,12 +37,9 @@ body {
 .main-header {
     background: white;
     padding: 1rem 2rem;
-<<<<<<< HEAD
     border-bottom: 3px solid #4f46e5;
-=======
     border-bottom: 3px solid rgb(79, 70, 229);
     /* blue */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,11 +50,8 @@ body {
 
 .logo-area h1 {
     font-size: 1.6rem;
-<<<<<<< HEAD
     background: linear-gradient(135deg, #4f46e5, #7c3aed);
-=======
     background: linear-gradient(135deg, rgb(79, 70, 229), rgb(124, 58, 237));
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -82,15 +67,11 @@ body {
 
 .main-nav a {
     text-decoration: none;
-<<<<<<< HEAD
     color: #334155;
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 40px;
     transition: all 0.2s ease;
-<<<<<<< HEAD
 }
 
 .main-nav a:hover {
@@ -106,7 +87,6 @@ body {
 .main-nav .logout-btn:hover {
     background: #fecaca;
     color: #b91c1c;
-=======
     color: rgb(51, 65, 85);
 }
 
@@ -123,7 +103,6 @@ body {
 .main-nav .logout-btn:hover {
     background: rgb(254, 202, 202);
     color: rgb(185, 28, 28);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 /* Main content – grows to push footer down */
@@ -137,47 +116,35 @@ body {
     text-align: center;
     padding: 1.5rem;
     background: white;
-<<<<<<< HEAD
     border-top: 1px solid #e2e8f0;
     color: #64748b;
-=======
     border-top: 1px solid rgb(226, 232, 240);
     color: rgb(100, 116, 139);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     font-size: 0.85rem;
     margin-top: auto;
 }
 
-<<<<<<< HEAD
 .main-footer p {
     margin: 0;
 }
 
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 /* Typography */
 h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-<<<<<<< HEAD
     color: #0f172a;
     border-left: 6px solid #4f46e5;
-=======
     color: rgb(15, 23, 42);
     border-left: 6px solid rgb(79, 70, 229);
     /* blue */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     padding-left: 1rem;
 }
 
 h3 {
     font-size: 1.3rem;
     margin: 1rem 0 0.5rem;
-<<<<<<< HEAD
     color: #1e293b;
-=======
     color: rgb(30, 41, 59);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 /* Alert messages */
@@ -189,7 +156,6 @@ h3 {
 }
 
 .success {
-<<<<<<< HEAD
     background: #dcfce7;
     color: #166534;
     border-left: 6px solid #22c55e;
@@ -205,7 +171,6 @@ h3 {
 button,
 .btn {
     background: #4f46e5;
-=======
     background: rgb(220, 252, 231);
     color: rgb(22, 101, 52);
     border-left: 6px solid rgb(34, 197, 94);
@@ -224,7 +189,6 @@ button,
 .btn {
     background: rgb(79, 70, 229);
     /* blue */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -239,11 +203,8 @@ button,
 
 button:hover,
 .btn:hover {
-<<<<<<< HEAD
     background: #6366f1;
-=======
     background: rgb(99, 102, 241);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
@@ -257,11 +218,8 @@ button:hover,
     display: inline-block;
     margin-top: 0.8rem;
     padding: 0.4rem 0.8rem;
-<<<<<<< HEAD
     background: #4f46e5;
-=======
     background: rgb(79, 70, 229);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -270,13 +228,10 @@ button:hover,
 
 .btn-outline {
     background: transparent;
-<<<<<<< HEAD
     border: 2px solid #4f46e5;
     color: #4f46e5;
-=======
     border: 2px solid rgb(79, 70, 229);
     color: rgb(79, 70, 229);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     padding: 0.6rem 1.2rem;
     border-radius: 40px;
     text-decoration: none;
@@ -285,11 +240,8 @@ button:hover,
 }
 
 .btn-outline:hover {
-<<<<<<< HEAD
     background: #eef2ff;
-=======
     background: rgb(238, 242, 255);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     transform: none;
     box-shadow: none;
 }
@@ -298,35 +250,27 @@ input,
 select,
 textarea {
     padding: 0.6rem 1rem;
-<<<<<<< HEAD
     border: 1px solid #cbd5e1;
-=======
     border: 1px solid rgb(203, 213, 225);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     border-radius: 12px;
     width: 100%;
     max-width: 400px;
     margin-bottom: 1rem;
     font-family: inherit;
-<<<<<<< HEAD
     background: #f8fafc;
     transition: 0.2s;
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-<<<<<<< HEAD
     border-color: #4f46e5;
     background: white;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 /* Course cards (used in student views) */
-=======
     border-color: rgb(79, 70, 229);
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
@@ -391,7 +335,6 @@ textarea:focus {
 }
 
 /* Course cards */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 .course-card {
     background: white;
     border-radius: 20px;
@@ -399,12 +342,9 @@ textarea:focus {
     margin-bottom: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
-<<<<<<< HEAD
     border-left: 5px solid #eab308;
-=======
     border-left: 5px solid rgb(251, 191, 36);
     /* yellow */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 .course-card:hover {
@@ -427,7 +367,6 @@ textarea:focus {
 }
 
 .welcome-section {
-<<<<<<< HEAD
     background: linear-gradient(105deg, #eef2ff 0%, #ffffff 100%);
     padding: 1.5rem;
     border-radius: 24px;
@@ -439,7 +378,6 @@ textarea:focus {
     padding: 1.5rem;
     border-radius: 24px;
     border-left: 8px solid #eab308;
-=======
     background: linear-gradient(105deg, rgb(238, 242, 255) 0%, rgb(255, 255, 255) 100%);
     padding: 1.5rem;
     border-radius: 24px;
@@ -453,7 +391,6 @@ textarea:focus {
     border-radius: 24px;
     border-left: 8px solid rgb(234, 179, 8);
     /* yellow */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 .quiz-card {
@@ -462,11 +399,8 @@ textarea:focus {
 
 .course-badge {
     display: inline-block;
-<<<<<<< HEAD
     background: #e2e8f0;
-=======
     background: rgb(226, 232, 240);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     padding: 0.2rem 0.6rem;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -493,12 +427,9 @@ textarea:focus {
     text-align: center;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
-<<<<<<< HEAD
     border-bottom: 4px solid #d2691e;
-=======
     border-bottom: 4px solid rgb(210, 105, 30);
     /* chocolate */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 .stat-card:hover {
@@ -513,20 +444,17 @@ textarea:focus {
 .stat-value {
     font-size: 2.2rem;
     font-weight: 700;
-<<<<<<< HEAD
     color: #4f46e5;
 }
 
 .stat-label {
     color: #475569;
-=======
     color: rgb(79, 70, 229);
     /* blue */
 }
 
 .stat-label {
     color: rgb(71, 85, 105);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     margin-top: 0.5rem;
 }
 
@@ -537,11 +465,8 @@ textarea:focus {
     margin-top: 2rem;
 }
 
-<<<<<<< HEAD
 /* Tables */
-=======
 /* Leaderboard table */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 table {
     width: 100%;
     background: white;
@@ -551,23 +476,19 @@ table {
 }
 
 th {
-<<<<<<< HEAD
     background: #f1f5f9;
     padding: 0.8rem;
     text-align: left;
     font-weight: 600;
-=======
     background: rgb(241, 245, 249);
     padding: 0.8rem;
     text-align: left;
     font-weight: 600;
     color: rgb(30, 41, 59);
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 td {
     padding: 0.8rem;
-<<<<<<< HEAD
     border-bottom: 1px solid #e2e8f0;
 }
 
@@ -620,7 +541,6 @@ td {
     margin-top: 0.5rem;
 }
 
-=======
     border-bottom: 1px solid rgb(226, 232, 240);
 }
 
@@ -650,7 +570,6 @@ div[style*="border:1px solid #ccc"] {
     margin-bottom: 1.5rem;
 }
 
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 /* Responsive */
 @media (max-width: 768px) {
     .main-header {
@@ -670,11 +589,8 @@ div[style*="border:1px solid #ccc"] {
     .courses-grid {
         grid-template-columns: 1fr;
     }
-<<<<<<< HEAD
 
     .stats-grid {
         grid-template-columns: 1fr;
     }
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }

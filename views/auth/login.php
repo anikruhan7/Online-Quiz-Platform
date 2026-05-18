@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,7 +157,6 @@
             <div class="input-group">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="you@example.com" required autofocus>
-=======
 <div class="auth-wrapper">
     <div class="auth-card">
         <div class="auth-header">
@@ -169,13 +167,11 @@
             <div class="input-group">
                 <label>Email Address</label>
                 <input type="email" name="email" placeholder="you@example.com" required>
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
             </div>
             <div class="input-group">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="••••••••" required>
             </div>
-<<<<<<< HEAD
             <button type="submit" class="btn-login">Submit</button>
         </form>
         <div class="register-link">
@@ -188,7 +184,6 @@
 </body>
 
 </html>
-=======
             <button type="submit" class="btn-full">Login</button>
         </form>
         <div class="auth-footer">
@@ -279,4 +274,3 @@
         text-decoration: underline;
     }
 </style>
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84

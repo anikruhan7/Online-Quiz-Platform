@@ -1,21 +1,15 @@
 <?php
-<<<<<<< HEAD
-=======
 
 /**
  * Enrollment Model - Handles student enrollments in courses
  */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 class Enrollment extends Model
 {
     protected $table = 'enrollments';
 
-<<<<<<< HEAD
-=======
     /**
      * Check if a student is already enrolled in a course
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function isEnrolled($student_id, $course_id)
     {
         $stmt = $this->query(
@@ -25,12 +19,9 @@ class Enrollment extends Model
         return $stmt->get_result()->num_rows > 0;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Direct enrollment (open enrollment)
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function enrollDirect($student_id, $course_id)
     {
         return $this->query(
@@ -39,12 +30,9 @@ class Enrollment extends Model
         );
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Request enrollment (approval-based)
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function requestApproval($student_id, $course_id)
     {
         return $this->query(
@@ -53,19 +41,15 @@ class Enrollment extends Model
         );
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Get all active courses a student is enrolled in
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function getEnrolledCourses($student_id)
     {
         $sql = "SELECT c.*, u.name as instructor_name 
                 FROM enrollments e
                 JOIN courses c ON e.course_id = c.id
                 JOIN users u ON c.instructor_id = u.id
-<<<<<<< HEAD
                 WHERE e.student_id = ? AND e.status = 'active'";
         $stmt = $this->query($sql, [$student_id]);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -81,7 +65,6 @@ class Enrollment extends Model
         if ($stmt->get_result()->num_rows > 0) return false;
         $this->query("UPDATE enrollments SET status = 'dropped' WHERE student_id = ? AND course_id = ?", [$student_id, $course_id]);
         return true;
-=======
                 WHERE e.student_id = ? AND e.status = 'active'
                 ORDER BY c.title";
         $stmt = $this->query($sql, [$student_id]);
@@ -145,6 +128,5 @@ class Enrollment extends Model
             "UPDATE enrollments SET status = 'dropped' WHERE id = ?",
             [$enrollment_id]
         );
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     }
 }

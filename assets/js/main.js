@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Online Quiz Platform - Main JavaScript
  * Handles protected link interception, AJAX helpers, and UI enhancements
@@ -117,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert.style.opacity = '0';
             setTimeout(() => alert.remove(), 500);
         }, 5000);
-=======
 // Main JavaScript file for Quiz Platform
 // You can add global functions here
 
@@ -130,6 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
             }
         });
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     });
 });

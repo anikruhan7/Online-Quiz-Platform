@@ -13,10 +13,7 @@ class Course extends Model
                 WHERE c.status = 'active'";
         $params = [];
         $types = '';
-<<<<<<< HEAD
-=======
 
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         if (!empty($search)) {
             $sql .= " AND (c.title LIKE ? OR c.description LIKE ?)";
             $searchParam = "%$search%";
@@ -30,10 +27,7 @@ class Course extends Model
             $types .= 'i';
         }
         $sql .= " ORDER BY c.title";
-<<<<<<< HEAD
-=======
 
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         $stmt = $this->query($sql, $params, $types);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
@@ -50,7 +44,6 @@ class Course extends Model
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-<<<<<<< HEAD
     public function getCoursesByInstructor($instructor_id)
     {
         $stmt = $this->query("SELECT * FROM courses WHERE instructor_id = ? ORDER BY created_at DESC", [$instructor_id]);
@@ -88,7 +81,5 @@ class Course extends Model
         $row = $stmt->get_result()->fetch_assoc();
         return $row['total'] ?? 0;
     }
-=======
     // Other existing methods (find, getAll, etc.) are inherited from Model
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }

@@ -14,7 +14,6 @@ class DoubtSession extends Model
         $stmt = $this->query($sql);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-<<<<<<< HEAD
 
     public function getSessionsByTA($ta_id)
     {
@@ -30,8 +29,6 @@ class DoubtSession extends Model
             [$course_id, $ta_id, $title, $scheduled_at, $duration, $location, $max_attendees]
         );
     }
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
 
 class DoubtSessionBooking extends Model

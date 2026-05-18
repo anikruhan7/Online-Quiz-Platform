@@ -1,22 +1,17 @@
 <?php
-<<<<<<< HEAD
-=======
 
 /**
  * Quiz Model - Handles quizzes, questions, and options
  */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 class Quiz extends Model
 {
     protected $table = 'quizzes';
 
-<<<<<<< HEAD
     public function getPublishedQuizzesForCourse($course_id)
     {
         $sql = "SELECT * FROM quizzes WHERE course_id = ? AND status = 'published' 
                 AND (available_from IS NULL OR available_from <= NOW()) 
                 AND (available_until IS NULL OR available_until >= NOW())";
-=======
     /**
      * Get all published quizzes for a specific course
      */
@@ -27,29 +22,23 @@ class Quiz extends Model
                 AND (available_from IS NULL OR available_from <= NOW()) 
                 AND (available_until IS NULL OR available_until >= NOW())
                 ORDER BY available_from ASC";
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         $stmt = $this->query($sql, [$course_id]);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Get a quiz with all its questions and options (for taking quiz)
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function getQuizWithQuestions($quiz_id)
     {
         $quiz = $this->find($quiz_id);
         if (!$quiz) return null;
-<<<<<<< HEAD
         $stmt = $this->query("SELECT * FROM questions WHERE quiz_id = ? ORDER BY order_index", [$quiz_id]);
         $questions = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         foreach ($questions as &$q) {
             $stmt2 = $this->query("SELECT * FROM options WHERE question_id = ?", [$q['id']]);
             $q['options'] = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
         }
-=======
 
         // Get questions
         $stmt = $this->query(
@@ -67,13 +56,10 @@ class Quiz extends Model
             $q['options'] = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
         }
 
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         $quiz['questions'] = $questions;
         return $quiz;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Get all quizzes created by an instructor
      */
@@ -91,7 +77,6 @@ class Quiz extends Model
     /**
      * Create a new quiz
      */
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function createQuiz($data)
     {
         $sql = "INSERT INTO quizzes (course_id, created_by, title, description, 
@@ -113,8 +98,6 @@ class Quiz extends Model
         ]);
         return $this->db->insert_id;
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Update quiz status (draft/published)
@@ -126,5 +109,4 @@ class Quiz extends Model
             [$status, $quiz_id]
         );
     }
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }

@@ -11,18 +11,14 @@ class User extends Model
 
     public function create($data)
     {
-<<<<<<< HEAD
         $sql = "INSERT INTO users (name, email, password_hash, role, student_id, program, department, bio) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-=======
         $sql = "INSERT INTO users (name, email, password_hash, student_id, program, role) 
                 VALUES (?, ?, ?, ?, ?, 'student')";
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         $stmt = $this->query($sql, [
             $data['name'],
             $data['email'],
             $data['password_hash'],
-<<<<<<< HEAD
             $data['role'],
             $data['student_id'] ?? null,
             $data['program'] ?? null,
@@ -30,7 +26,6 @@ class User extends Model
             $data['bio'] ?? null
         ]);
         return $this->db->insert_id;
-=======
             $data['student_id'] ?? '',
             $data['program'] ?? ''
         ]);
@@ -38,7 +33,6 @@ class User extends Model
             return $this->db->insert_id;
         }
         return false;
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     }
 
     public function updateProfile($id, $name, $phone, $program, $pic = null)
@@ -56,7 +50,6 @@ class User extends Model
         }
     }
 
-<<<<<<< HEAD
     public function updateProfileInstructor($id, $name, $phone, $department, $bio, $pic = null)
     {
         if ($pic) {
@@ -102,13 +95,10 @@ class User extends Model
         }
     }
 
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     public function changePassword($id, $hash)
     {
         $this->query("UPDATE users SET password_hash=? WHERE id=?", [$hash, $id]);
     }
-<<<<<<< HEAD
 
     public function updateRoleAndStatus($id, $role, $is_active)
     {
@@ -127,6 +117,4 @@ class User extends Model
         $stmt = $this->query("SELECT * FROM users ORDER BY created_at DESC");
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-=======
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }

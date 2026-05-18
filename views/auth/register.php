@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -191,7 +190,6 @@
             </div>
             <div class="input-group">
                 <label>Email</label>
-=======
 <div class="auth-wrapper">
     <div class="auth-card">
         <div class="auth-header">
@@ -205,12 +203,10 @@
             </div>
             <div class="input-group">
                 <label>Email Address</label>
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
                 <input type="email" name="email" placeholder="you@example.com" required>
             </div>
             <div class="input-group">
                 <label>Password</label>
-<<<<<<< HEAD
                 <input type="password" name="password" placeholder="Create a password" required>
             </div>
 
@@ -272,7 +268,6 @@
 </body>
 
 </html>
-=======
                 <input type="password" name="password" placeholder="Create a strong password" required>
             </div>
             <div class="input-group">
@@ -290,4 +285,3 @@
         </div>
     </div>
 </div>
->>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
