@@ -17,16 +17,6 @@ class Model
         $stmt = $this->db->prepare($sql);
         if (!$stmt) die("Prepare failed: " . $this->db->error);
         if (!empty($params)) {
-    public function __construct()
-    {
-        $dbObj = new Database();
-        $this->db = $dbObj->getConnection();
-    }
-    protected function query($sql, $params = [], $types = "")
-    {
-        $stmt = $this->db->prepare($sql);
-        if (!$stmt) die("Prepare error: " . $this->db->error);
-        if ($params) {
             if (empty($types)) $types = str_repeat('s', count($params));
             $stmt->bind_param($types, ...$params);
         }

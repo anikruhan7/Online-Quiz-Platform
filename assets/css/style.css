@@ -1,9 +1,3 @@
-/* ============================================
-   Online Quiz Platform - Global Styles
-   Modern design with gradient, cards, glassmorphism
-   Online Quiz Platform - Vibrant Color Scheme
-   ============================================ */
-
 * {
     margin: 0;
     padding: 0;
@@ -15,12 +9,8 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #1e293b;
-    background: linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(118, 75, 162) 100%);
-    min-height: 100vh;
-    color: rgb(30, 41, 59);
 }
 
-/* Main app container – sticky footer layout */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -28,18 +18,14 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     background: #f8fafc;
-    background: rgb(248, 250, 252);
     border-radius: 0 0 24px 24px;
     box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header & Navigation */
 .main-header {
     background: white;
     padding: 1rem 2rem;
     border-bottom: 3px solid #4f46e5;
-    border-bottom: 3px solid rgb(79, 70, 229);
-    /* blue */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +37,6 @@ body {
 .logo-area h1 {
     font-size: 1.6rem;
     background: linear-gradient(135deg, #4f46e5, #7c3aed);
-    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(124, 58, 237));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -87,39 +72,19 @@ body {
 .main-nav .logout-btn:hover {
     background: #fecaca;
     color: #b91c1c;
-    color: rgb(51, 65, 85);
 }
 
-.main-nav a:hover {
-    background: rgb(238, 242, 255);
-    color: rgb(79, 70, 229);
-}
-
-.main-nav .logout-btn {
-    background: rgb(254, 226, 226);
-    color: rgb(220, 38, 38);
-}
-
-.main-nav .logout-btn:hover {
-    background: rgb(254, 202, 202);
-    color: rgb(185, 28, 28);
-}
-
-/* Main content – grows to push footer down */
 .main-content {
     flex: 1;
     padding: 2rem;
 }
 
-/* Footer */
 .main-footer {
     text-align: center;
     padding: 1.5rem;
     background: white;
     border-top: 1px solid #e2e8f0;
     color: #64748b;
-    border-top: 1px solid rgb(226, 232, 240);
-    color: rgb(100, 116, 139);
     font-size: 0.85rem;
     margin-top: auto;
 }
@@ -128,15 +93,11 @@ body {
     margin: 0;
 }
 
-/* Typography */
 h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: #0f172a;
     border-left: 6px solid #4f46e5;
-    color: rgb(15, 23, 42);
-    border-left: 6px solid rgb(79, 70, 229);
-    /* blue */
     padding-left: 1rem;
 }
 
@@ -144,10 +105,8 @@ h3 {
     font-size: 1.3rem;
     margin: 1rem 0 0.5rem;
     color: #1e293b;
-    color: rgb(30, 41, 59);
 }
 
-/* Alert messages */
 .alert {
     padding: 1rem;
     border-radius: 12px;
@@ -167,28 +126,9 @@ h3 {
     border-left: 6px solid #ef4444;
 }
 
-/* Buttons & forms (global) */
 button,
 .btn {
     background: #4f46e5;
-    background: rgb(220, 252, 231);
-    color: rgb(22, 101, 52);
-    border-left: 6px solid rgb(34, 197, 94);
-    /* green */
-}
-
-.error {
-    background: rgb(254, 226, 226);
-    color: rgb(153, 27, 27);
-    border-left: 6px solid rgb(239, 68, 68);
-    /* red */
-}
-
-/* Buttons & forms */
-button,
-.btn {
-    background: rgb(79, 70, 229);
-    /* blue */
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -204,7 +144,6 @@ button,
 button:hover,
 .btn:hover {
     background: #6366f1;
-    background: rgb(99, 102, 241);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
@@ -219,7 +158,6 @@ button:hover,
     margin-top: 0.8rem;
     padding: 0.4rem 0.8rem;
     background: #4f46e5;
-    background: rgb(79, 70, 229);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -230,8 +168,6 @@ button:hover,
     background: transparent;
     border: 2px solid #4f46e5;
     color: #4f46e5;
-    border: 2px solid rgb(79, 70, 229);
-    color: rgb(79, 70, 229);
     padding: 0.6rem 1.2rem;
     border-radius: 40px;
     text-decoration: none;
@@ -241,9 +177,6 @@ button:hover,
 
 .btn-outline:hover {
     background: #eef2ff;
-    background: rgb(238, 242, 255);
-    transform: none;
-    box-shadow: none;
 }
 
 input,
@@ -251,7 +184,6 @@ select,
 textarea {
     padding: 0.6rem 1rem;
     border: 1px solid #cbd5e1;
-    border: 1px solid rgb(203, 213, 225);
     border-radius: 12px;
     width: 100%;
     max-width: 400px;
@@ -270,229 +202,6 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
-/* Course cards (used in student views) */
-    border-color: rgb(79, 70, 229);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-/* Auth cards (login/register) */
-.auth-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    padding: 2rem;
-}
-
-.auth-card {
-    background: white;
-    border-radius: 32px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    border-top: 6px solid rgb(236, 72, 153);
-    /* pink */
-}
-
-.auth-header h2 {
-    border-left: none;
-    margin-bottom: 0.5rem;
-    color: rgb(236, 72, 153);
-}
-
-.auth-header p {
-    color: rgb(100, 116, 139);
-}
-
-.input-group {
-    margin-bottom: 1.2rem;
-}
-
-.input-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-    color: rgb(51, 65, 85);
-}
-
-.auth-footer {
-    text-align: center;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgb(226, 232, 240);
-}
-
-.auth-footer a {
-    color: rgb(236, 72, 153);
-    /* pink */
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.auth-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Course cards */
-.course-card {
-    background: white;
-    border-radius: 20px;
-    padding: 1.2rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-left: 5px solid #eab308;
-    border-left: 5px solid rgb(251, 191, 36);
-    /* yellow */
-}
-
-.course-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.15);
-}
-
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Dashboard specific */
-.dashboard-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.welcome-section {
-    background: linear-gradient(105deg, #eef2ff 0%, #ffffff 100%);
-    padding: 1.5rem;
-    border-radius: 24px;
-    border-bottom: 3px solid #22c55e;
-}
-
-.upcoming-card {
-    background: #fef9c3;
-    padding: 1.5rem;
-    border-radius: 24px;
-    border-left: 8px solid #eab308;
-    background: linear-gradient(105deg, rgb(238, 242, 255) 0%, rgb(255, 255, 255) 100%);
-    padding: 1.5rem;
-    border-radius: 24px;
-    border-bottom: 3px solid rgb(34, 197, 94);
-    /* green */
-}
-
-.upcoming-card {
-    background: rgb(254, 249, 195);
-    padding: 1.5rem;
-    border-radius: 24px;
-    border-left: 8px solid rgb(234, 179, 8);
-    /* yellow */
-}
-
-.quiz-card {
-    margin-top: 0.5rem;
-}
-
-.course-badge {
-    display: inline-block;
-    background: #e2e8f0;
-    background: rgb(226, 232, 240);
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    margin-left: 0.5rem;
-}
-
-/* Performance dashboard */
-.performance-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.stat-card {
-    background: white;
-    border-radius: 24px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-    border-bottom: 4px solid #d2691e;
-    border-bottom: 4px solid rgb(210, 105, 30);
-    /* chocolate */
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat-value {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #4f46e5;
-}
-
-.stat-label {
-    color: #475569;
-    color: rgb(79, 70, 229);
-    /* blue */
-}
-
-.stat-label {
-    color: rgb(71, 85, 105);
-    margin-top: 0.5rem;
-}
-
-.performance-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-/* Tables */
-/* Leaderboard table */
-table {
-    width: 100%;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-th {
-    background: #f1f5f9;
-    padding: 0.8rem;
-    text-align: left;
-    font-weight: 600;
-    background: rgb(241, 245, 249);
-    padding: 0.8rem;
-    text-align: left;
-    font-weight: 600;
-    color: rgb(30, 41, 59);
-}
-
-td {
-    padding: 0.8rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-/* Auth cards (login/register) – fallback if inline styles missing, but inline styles are primary */
 .auth-wrapper {
     display: flex;
     justify-content: center;
@@ -522,6 +231,10 @@ td {
     color: #ec4899;
 }
 
+.auth-header p {
+    color: #64748b;
+}
+
 .input-group {
     margin-bottom: 1.2rem;
 }
@@ -533,7 +246,148 @@ td {
     color: #334155;
 }
 
-/* Dynamic role fields */
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.auth-footer a {
+    color: #ec4899;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.course-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid #eab308;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.15);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.welcome-section {
+    background: linear-gradient(105deg, #eef2ff 0%, white 100%);
+    padding: 1.5rem;
+    border-radius: 24px;
+    border-bottom: 3px solid #22c55e;
+}
+
+.upcoming-card {
+    background: #fef9c3;
+    padding: 1.5rem;
+    border-radius: 24px;
+    border-left: 8px solid #eab308;
+}
+
+.quiz-card {
+    margin-top: 0.5rem;
+}
+
+.course-badge {
+    display: inline-block;
+    background: #e2e8f0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+}
+
+.performance-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    border-bottom: 4px solid #d2691e;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.stat-label {
+    color: #475569;
+    margin-top: 0.5rem;
+}
+
+.performance-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: #f1f5f9;
+    padding: 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
 .dynamic-fields {
     background: #fefce8;
     padding: 0.8rem;
@@ -541,27 +395,14 @@ td {
     margin-top: 0.5rem;
 }
 
-    border-bottom: 1px solid rgb(226, 232, 240);
-}
-
-/* Q&A board custom */
-div[style*="border:1px solid #ccc"] {
-    border-color: rgb(203, 213, 225) !important;
-    background: white;
-    border-radius: 20px;
-}
-
-/* Doubt sessions */
 .doubt-session-item {
     background: white;
     border-radius: 20px;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-left: 5px solid rgb(168, 85, 247);
-    /* purple */
+    border-left: 5px solid #a855f7;
 }
 
-/* Profile page */
 .profile-form {
     background: white;
     border-radius: 24px;
@@ -570,7 +411,6 @@ div[style*="border:1px solid #ccc"] {
     margin-bottom: 1.5rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;

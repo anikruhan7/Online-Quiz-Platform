@@ -32,32 +32,41 @@ class Attempt extends Model
 
     public function getStudentAttempts($student_id)
     {
-        $sql = "SELECT a.*, q.title as quiz_title, q.pass_mark, q.quiz_type, c.title as course_title 
-                FROM attempts a 
-                JOIN quizzes q ON a.quiz_id = q.id 
-                JOIN courses c ON q.course_id = c.id 
-                WHERE a.student_id = ? 
-                ORDER BY a.completed_at DESC";
-        $stmt = $this->query($sql, [$student_id]);
+        $stmt = $this->query("SELECT a.*, q.title as quiz_title, q.pass_mark, q.quiz_type, c.title as course_title 
+                              FROM attempts a 
+                              JOIN quizzes q ON a.quiz_id = q.id 
+                              JOIN courses c ON q.course_id = c.id 
+                              WHERE a.student_id = ? 
+                              ORDER BY a.completed_at DESC", [$student_id]);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getLeaderboard($quiz_id, $limit = 10)
     {
-        $sql = "SELECT u.name, a.score 
-                FROM attempts a 
-                JOIN users u ON a.student_id = u.id 
-                WHERE a.quiz_id = ? AND a.is_graded = 1 AND a.completed_at IS NOT NULL 
-                ORDER BY a.score DESC 
-                LIMIT ?";
-        $stmt = $this->query($sql, [$quiz_id, $limit], 'ii');
+        $stmt = $this->query("SELECT u.name, a.score 
+                              FROM attempts a 
+                              JOIN users u ON a.student_id = u.id 
+                              WHERE a.quiz_id = ? AND a.is_graded = 1 AND a.completed_at IS NOT NULL 
+                              ORDER BY a.score DESC 
+                              LIMIT ?", [$quiz_id, $limit], 'ii');
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
     public function countAll()
     {
         $stmt = $this->query("SELECT COUNT(*) as total FROM attempts");
-        $row = $stmt->get_result()->fetch_assoc();
-        return $row['total'] ?? 0;
+        return $stmt->get_result()->fetch_assoc()['total'] ?? 0;
+    }
+
+    public function countToday()
+    {
+        $stmt = $this->query("SELECT COUNT(*) as total FROM attempts WHERE DATE(completed_at) = CURDATE()");
+        return $stmt->get_result()->fetch_assoc()['total'] ?? 0;
+    }
+
+    public function countByQuiz($quiz_id)
+    {
+        $stmt = $this->query("SELECT COUNT(*) as total FROM attempts WHERE quiz_id = ?", [$quiz_id]);
+        return $stmt->get_result()->fetch_assoc()['total'] ?? 0;
     }
 }

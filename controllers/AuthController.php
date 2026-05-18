@@ -25,7 +25,7 @@ class AuthController extends Controller
             $_SESSION['role'] = $user['role'];
             $this->redirect('index.php?url=' . $user['role'] . '/dashboard');
         } else {
-            $_SESSION['error'] = "Invalid email or password";
+            $_SESSION['error'] = "Invalid credentials";
             $this->redirect('index.php?url=login');
         }
     }
@@ -42,14 +42,14 @@ class AuthController extends Controller
         $bio = $_POST['bio'] ?? '';
 
         if (empty($name) || empty($email) || empty($password)) {
-            $_SESSION['error'] = "Name, email and password are required.";
+            $_SESSION['error'] = "Name, email and password are required";
             $this->redirect('index.php?url=register');
             return;
         }
         if ($role === 'admin') {
             $adminCode = $_POST['admin_code'] ?? '';
-            if ($adminCode !== 'ADMIN123') {
-                $_SESSION['error'] = "Invalid admin code.";
+            if ($adminCode !== 'ANIK321') {
+                $_SESSION['error'] = "Invalid admin code";
                 $this->redirect('index.php?url=register');
                 return;
             }
@@ -67,10 +67,16 @@ class AuthController extends Controller
             'bio' => $bio
         ]);
         if ($userId) {
+
+            if ($role === 'instructor') {
+                $userModel->updateRoleAndStatus($userId, $role, 0);
+            } else {
+                $userModel->updateRoleAndStatus($userId, $role, 1);
+            }
             $_SESSION['success'] = "Registration successful. Please login.";
             $this->redirect('index.php?url=login');
         } else {
-            $_SESSION['error'] = "Email already exists.";
+            $_SESSION['error'] = "Email already exists or registration failed";
             $this->redirect('index.php?url=register');
         }
     }

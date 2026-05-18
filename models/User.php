@@ -13,8 +13,6 @@ class User extends Model
     {
         $sql = "INSERT INTO users (name, email, password_hash, role, student_id, program, department, bio) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        $sql = "INSERT INTO users (name, email, password_hash, student_id, program, role) 
-                VALUES (?, ?, ?, ?, ?, 'student')";
         $stmt = $this->query($sql, [
             $data['name'],
             $data['email'],
@@ -26,13 +24,6 @@ class User extends Model
             $data['bio'] ?? null
         ]);
         return $this->db->insert_id;
-            $data['student_id'] ?? '',
-            $data['program'] ?? ''
-        ]);
-        if ($stmt && $this->db->insert_id) {
-            return $this->db->insert_id;
-        }
-        return false;
     }
 
     public function updateProfile($id, $name, $phone, $program, $pic = null)
@@ -112,9 +103,51 @@ class User extends Model
         return $row['total'] ?? 0;
     }
 
-    public function getAll()
+    public function getAll($search = '')
     {
-        $stmt = $this->query("SELECT * FROM users ORDER BY created_at DESC");
+        if (!empty($search)) {
+            $searchParam = "%$search%";
+            $stmt = $this->query(
+                "SELECT * FROM users WHERE name LIKE ? OR email LIKE ? ORDER BY created_at DESC",
+                [$searchParam, $searchParam],
+                'ss'
+            );
+        } else {
+            $stmt = $this->query("SELECT * FROM users ORDER BY created_at DESC");
+        }
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function countByRole($role)
+    {
+        $stmt = $this->query("SELECT COUNT(*) as total FROM users WHERE role = ?", [$role]);
+        return $stmt->get_result()->fetch_assoc()['total'] ?? 0;
+    }
+
+    public function countPendingInstructors()
+    {
+        $stmt = $this->query("SELECT COUNT(*) as total FROM users WHERE role = 'instructor' AND is_active = 0");
+        return $stmt->get_result()->fetch_assoc()['total'] ?? 0;
+    }
+
+    public function getInstructors()
+    {
+        $stmt = $this->query("SELECT id, name FROM users WHERE role = 'instructor' ORDER BY name");
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAtRiskStudentsForTA($ta_id)
+    {
+        $sql = "SELECT u.id, u.name, u.email, AVG(a.score / q.total_marks * 100) as avg_percent
+                FROM users u
+                JOIN attempts a ON u.id = a.student_id
+                JOIN quizzes q ON a.quiz_id = q.id
+                JOIN courses c ON q.course_id = c.id
+                JOIN course_tas ct ON c.id = ct.course_id
+                WHERE ct.ta_id = ? AND a.is_graded = 1
+                GROUP BY u.id
+                HAVING avg_percent < 50";
+        $stmt = $this->query($sql, [$ta_id]);
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 }

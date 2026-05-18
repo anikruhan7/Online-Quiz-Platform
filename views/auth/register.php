@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Register | Quiz Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,165 +15,126 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a237e 0%, #800000 100%);
-            min-height: 100vh;
+            background: linear-gradient(135deg, #1a237e, #800000);
+            height: 100vh;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
+            overflow: hidden;
+            /* prevent body scroll */
         }
 
         .register-card {
             background: #faf9f6;
             border-radius: 1rem;
-            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.3);
-            max-width: 550px;
+            padding: 1rem 1.2rem;
             width: 100%;
-            padding: 1.8rem;
-            transition: transform 0.2s;
+            max-width: 480px;
             max-height: 95vh;
             overflow-y: auto;
-            margin: auto;
+            /* allow card scroll only if absolutely necessary, but content fits */
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.3);
         }
 
+        /* Hide scrollbar for cleaner look (optional) */
         .register-card::-webkit-scrollbar {
-            width: 5px;
+            width: 0;
+            background: transparent;
         }
 
-        .register-card::-webkit-scrollbar-track {
-            background: #e0d6c6;
-            border-radius: 0.5rem;
-        }
-
-        .register-card::-webkit-scrollbar-thumb {
-            background: #800000;
-            border-radius: 0.5rem;
-        }
-
-        .register-card:hover {
-            transform: scale(1.01);
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #800000;
-            margin-bottom: 0.3rem;
+        .register-card h1 {
             text-align: center;
-        }
-
-        .sub {
-            text-align: center;
-            color: #4a4a4a;
-            margin-bottom: 1.2rem;
-            font-size: 0.85rem;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #800000, #1a237e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
         }
 
         .input-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
         }
 
         .input-group label {
             display: block;
             font-weight: 500;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.15rem;
             color: #1a1a1a;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         .input-group input,
         .input-group select,
         .input-group textarea {
             width: 100%;
-            padding: 0.7rem 1rem;
-            border: 1.5px solid #b0e0e6;
-            border-radius: 0.75rem;
-            font-size: 0.85rem;
+            padding: 0.4rem 0.6rem;
+            border: 1px solid #b0e0e6;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
             background: white;
-            transition: 0.2s;
-            font-family: inherit;
         }
 
         .input-group input:focus,
-        .input-group select:focus,
-        .input-group textarea:focus {
-            outline: none;
+        .input-group select:focus {
             border-color: #800000;
-            box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.1);
+            outline: none;
         }
 
         .dynamic-fields {
             background: #f5f0e6;
-            padding: 0.6rem;
-            border-radius: 0.75rem;
-            margin: 0.5rem 0;
+            padding: 0.4rem;
+            border-radius: 0.5rem;
+            margin: 0.3rem 0;
         }
 
-        .btn-register {
+        button {
             background: #800000;
             color: white;
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.5rem;
             border: none;
-            border-radius: 0.75rem;
+            border-radius: 0.5rem;
             font-weight: 600;
-            font-size: 0.95rem;
             cursor: pointer;
-            transition: 0.2s;
-            margin: 0.5rem 0 1rem;
-        }
-
-        .btn-register:hover {
-            background: #660000;
-            transform: translateY(-1px);
-        }
-
-        .login-link {
-            text-align: center;
+            margin-top: 0.5rem;
             font-size: 0.85rem;
+        }
+
+        button:hover {
+            background: #660000;
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 0.8rem;
+            font-size: 0.7rem;
             color: #1a1a1a;
         }
 
-        .login-link a {
+        .footer-link a {
             color: #2e7d32;
-            font-weight: 600;
             text-decoration: none;
         }
 
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-note {
-            text-align: center;
-            font-size: 0.7rem;
-            color: #8b4513;
-            margin-top: 1rem;
-            border-top: 1px solid #e0d6c6;
-            padding-top: 0.8rem;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-height: 700px) {
             .register-card {
-                padding: 1.2rem;
+                padding: 0.8rem 1rem;
             }
 
-            h1 {
-                font-size: 1.7rem;
-            }
-        }
-
-        @media (min-width: 1200px) and (orientation: landscape) {
-            .register-card {
-                max-width: 650px;
-                padding: 2rem;
+            .input-group {
+                margin-bottom: 0.4rem;
             }
 
             .input-group input,
-            .input-group select,
-            .input-group textarea {
-                padding: 0.8rem 1rem;
+            .input-group select {
+                padding: 0.3rem 0.5rem;
+            }
+
+            .register-card h1 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -181,67 +142,37 @@
 
 <body>
     <div class="register-card">
-        <h1>Welcome!</h1>
-        <div class="sub">Create your account</div>
-        <form method="POST" action="index.php?url=register" id="registerForm">
-            <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" name="name" placeholder="e.g., John Doe" required>
-            </div>
-            <div class="input-group">
-                <label>Email</label>
-<div class="auth-wrapper">
-    <div class="auth-card">
-        <div class="auth-header">
-            <h2>Create Account</h2>
-            <p>Join as a student</p>
-        </div>
-        <form method="POST" action="index.php?url=register">
-            <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" name="name" placeholder="John Doe" required>
-            </div>
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="you@example.com" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Create a password" required>
-            </div>
-
-            <div class="input-group">
-                <label>I want to join as</label>
-                <select name="role" id="roleSelect">
+        <h1>Fill up carefully !</h1>
+        <form method="POST" action="index.php?url=register" id="regForm">
+            <div class="input-group"><label>Full Name</label><input type="text" name="name" required></div>
+            <div class="input-group"><label>Email</label><input type="email" name="email" required></div>
+            <div class="input-group"><label>Password</label><input type="password" name="password" required></div>
+            <div class="input-group"><label>Role</label><select name="role" id="roleSelect">
                     <option value="student">Student</option>
                     <option value="instructor">Instructor</option>
                     <option value="ta">Teaching Assistant</option>
                     <option value="admin">Admin</option>
-                </select>
-            </div>
+                </select></div>
 
             <div id="studentFields" class="dynamic-fields">
-                <div class="input-group"><label>Student ID (optional)</label><input type="text" name="student_id" placeholder="e.g., S12345"></div>
-                <div class="input-group"><label>Program (optional)</label><input type="text" name="program" placeholder="e.g., Computer Science"></div>
+                <div class="input-group"><label>Student ID (optional)</label><input type="text" name="student_id"></div>
+                <div class="input-group"><label>Program (optional)</label><input type="text" name="program"></div>
             </div>
             <div id="instructorFields" class="dynamic-fields" style="display:none;">
-                <div class="input-group"><label>Department</label><input type="text" name="department" placeholder="e.g., Computer Science"></div>
-                <div class="input-group"><label>Bio</label><textarea name="bio" rows="1" placeholder="Short bio"></textarea></div>
+                <div class="input-group"><label>Department</label><input type="text" name="department"></div>
+                <div class="input-group"><label>Bio</label><textarea name="bio" rows="1"></textarea></div>
             </div>
             <div id="taFields" class="dynamic-fields" style="display:none;">
-                <div class="input-group"><label>Department</label><input type="text" name="department" placeholder="e.g., Mathematics"></div>
+                <div class="input-group"><label>Department</label><input type="text" name="department"></div>
             </div>
             <div id="adminFields" class="dynamic-fields" style="display:none;">
-                <div class="input-group"><label>Admin Code</label><input type="password" name="admin_code" placeholder="Required for admin"></div>
+                <div class="input-group"><label>Admin Code</label><input type="password" name="admin_code"></div>
             </div>
 
-            <button type="submit" class="btn-register">Submit</button>
+            <button type="submit">Register</button>
         </form>
-        <div class="login-link">
-            Already have an account? <a href="index.php?url=login">Sign in</a>
-        </div>
-        <div class="footer-note">
-            Start your learning journey with us
+        <div class="footer-link">
+            Already have an account? <a href="index.php?url=login">Login here</a>
         </div>
     </div>
 
@@ -268,20 +199,3 @@
 </body>
 
 </html>
-                <input type="password" name="password" placeholder="Create a strong password" required>
-            </div>
-            <div class="input-group">
-                <label>Student ID (optional)</label>
-                <input type="text" name="student_id" placeholder="e.g., S12345">
-            </div>
-            <div class="input-group">
-                <label>Program (optional)</label>
-                <input type="text" name="program" placeholder="e.g., Computer Science">
-            </div>
-            <button type="submit" class="btn-full">Register</button>
-        </form>
-        <div class="auth-footer">
-            <p>Already have an account? <a href="index.php?url=login">Login here</a></p>
-        </div>
-    </div>
-</div>

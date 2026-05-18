@@ -23,10 +23,6 @@ class Router
                     $controller = new $controllerName();
                     echo $controller->$action(...$matches);
                 }
-                list($ctrl, $action) = explode('@', $route['handler']);
-                require_once "controllers/$ctrl.php";
-                $obj = new $ctrl();
-                echo $obj->$action(...$matches);
                 return;
             }
         }
