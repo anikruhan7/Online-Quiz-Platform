@@ -9,14 +9,20 @@ require_once 'core/Model.php';
 $router = new Router();
 $url = $_GET['url'] ?? '';
 
+<<<<<<< HEAD
 // Auth routes
+=======
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 $router->add('GET', 'login', 'AuthController@loginForm');
 $router->add('POST', 'login', 'AuthController@login');
 $router->add('GET', 'register', 'AuthController@registerForm');
 $router->add('POST', 'register', 'AuthController@register');
 $router->add('GET', 'logout', 'AuthController@logout');
 
+<<<<<<< HEAD
 // Student routes
+=======
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 $router->add('GET', 'student/dashboard', 'StudentController@dashboard');
 $router->add('GET', 'student/courses', 'StudentController@browseCourses');
 $router->add('POST', 'student/enroll', 'StudentController@enroll');
@@ -38,6 +44,7 @@ $router->add('GET', 'student/profile', 'StudentController@profile');
 $router->add('POST', 'student/profile/update', 'StudentController@updateProfile');
 $router->add('POST', 'student/change-password', 'StudentController@changePassword');
 
+<<<<<<< HEAD
 // Instructor routes
 $router->add('GET', 'instructor/dashboard', 'InstructorController@dashboard');
 $router->add('GET', 'instructor/create-course', 'InstructorController@createCourse');
@@ -76,6 +83,10 @@ $router->add('GET', 'api/check-login', 'ApiController@checkLogin');
 $router->add('GET', 'unauthorized', function () {
     require_once 'views/unauthorized.php';
 });
+=======
+$router->add('GET', 'api/leaderboard', 'ApiController@leaderboard');
+$router->add('POST', 'api/check-email', 'ApiController@checkEmail');
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 
 $method = $_SERVER['REQUEST_METHOD'];
 $router->dispatch($method, $url);

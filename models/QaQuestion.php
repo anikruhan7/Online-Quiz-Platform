@@ -25,6 +25,10 @@ class QaQuestion extends Model
 
     public function resolve($id, $student_id)
     {
+<<<<<<< HEAD
+=======
+        // Only the question owner can resolve
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
         $this->query(
             "UPDATE qa_questions SET is_resolved = 1 WHERE id = ? AND student_id = ?",
             [$id, $student_id]

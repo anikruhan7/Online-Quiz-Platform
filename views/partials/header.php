@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Quiz Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&display=swap" rel="stylesheet">
+=======
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 </head>
 
 <body>
@@ -17,6 +21,7 @@
             </div>
             <nav class="main-nav">
                 <?php if (isset($_SESSION['user_id'])): ?>
+<<<<<<< HEAD
                     <?php if ($_SESSION['role'] === 'student'): ?>
                         <a href="index.php?url=student/dashboard">Dashboard</a>
                         <a href="index.php?url=student/courses">Browse Courses</a>
@@ -44,6 +49,15 @@
                         <a href="index.php?url=admin/settings">Settings</a>
                         <a href="index.php?url=admin/profile">Profile</a>
                     <?php endif; ?>
+=======
+                    <a href="index.php?url=student/dashboard">Dashboard</a>
+                    <a href="index.php?url=student/courses">Browse Courses</a>
+                    <a href="index.php?url=student/enrolled">My Courses</a>
+                    <a href="index.php?url=student/leaderboard">Leaderboard</a>
+                    <a href="index.php?url=student/performance">Performance</a>
+                    <a href="index.php?url=student/doubt-sessions">Doubt Sessions</a>
+                    <a href="index.php?url=student/profile">Profile</a>
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
                     <a href="index.php?url=logout" class="logout-btn">Logout</a>
                 <?php else: ?>
                     <a href="index.php?url=login">Login</a>

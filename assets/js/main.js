@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Online Quiz Platform - Main JavaScript
  * Handles protected link interception, AJAX helpers, and UI enhancements
@@ -116,5 +117,19 @@ document.addEventListener('DOMContentLoaded', function () {
             alert.style.opacity = '0';
             setTimeout(() => alert.remove(), 500);
         }, 5000);
+=======
+// Main JavaScript file for Quiz Platform
+// You can add global functions here
+
+// Example: confirm before dropping a course
+document.addEventListener('DOMContentLoaded', function () {
+    const dropButtons = document.querySelectorAll('form[action="/quizplatform/student/drop-course"] button');
+    dropButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            if (!confirm('Are you sure you want to drop this course?')) {
+                e.preventDefault();
+            }
+        });
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
     });
 });

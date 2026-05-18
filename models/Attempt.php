@@ -53,6 +53,7 @@ class Attempt extends Model
         $stmt = $this->query($sql, [$quiz_id, $limit], 'ii');
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+<<<<<<< HEAD
 
     public function countAll()
     {
@@ -60,4 +61,6 @@ class Attempt extends Model
         $row = $stmt->get_result()->fetch_assoc();
         return $row['total'] ?? 0;
     }
+=======
+>>>>>>> 22feb9917b75bd316a893fbaa97bfdb8d2e49a84
 }
